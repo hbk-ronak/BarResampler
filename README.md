@@ -17,3 +17,5 @@ be able to specify the size of the bars as an option.
 should be able to specify the size of the bars as an option.
 8. Given a dataframe consisting of data from one symbol sample dollar bars. The user
 should be able to specify the size of the bars as an option.
+
+The Documentation can be found [here](https://hbk-ronak.github.io/BarResampler/)
