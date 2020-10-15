@@ -22,8 +22,7 @@ def prepare_data(filepath):
 
     with open(filepath+".csv", "w") as f:
         for i in range(len(file)):
-            if i%1000 == 0:
-                f.write(file[i])
+            f.write(file[i])
     return
 
 
