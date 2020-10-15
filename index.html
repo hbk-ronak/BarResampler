@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Bar Sampler’s documentation! &#8212; Bar Sampler 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-bar-sampler-s-documentation">
+<h1>Welcome to Bar Sampler’s documentation!<a class="headerlink" href="#welcome-to-bar-sampler-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="module-barsampler.barsampler">
+<span id="bar-sampler"></span><h1>Bar Sampler<a class="headerlink" href="#module-barsampler.barsampler" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="barsampler.barsampler.delete_trade_type">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">delete_trade_type</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">trade_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.delete_trade_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes trade of a particular type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame</strong></dt><dd><p>Raw data or data from one.</p>
+</dd>
+<dt><strong>symbol: str</strong></dt><dd><p>Symbol of the ticker.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe containing data for one symbol.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.dollar_resampler">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">dollar_resampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">50000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.dollar_resampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resamples the data based on Dollars traded.</p>
+<p>Dollars = price * volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame</strong></dt><dd><p>Data for one tick .</p>
+</dd>
+<dt><strong>size: int</strong></dt><dd><p>Run total of Dollars traded.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe containing OHLCV .</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.get_ticks_symbols">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">get_ticks_symbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">symbol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.get_ticks_symbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filters the data for a particular symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame.</strong></dt><dd><p>Raw Data</p>
+</dd>
+<dt><strong>symbol: str</strong></dt><dd><p>Symbol of the ticker.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe containing data for one symbol.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.min_resampler">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">min_resampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">'T'</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">volume</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.min_resampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resamples the data based on time period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame</strong></dt><dd><p>Raw data or data from one .</p>
+</dd>
+<dt><strong>units: str</strong></dt><dd><p>Unit of the time period {“T”: Minutes, “S”: Seconds}.</p>
+</dd>
+<dt><strong>size: int</strong></dt><dd><p>No of units.</p>
+</dd>
+<dt><strong>volume: bool</strong></dt><dd><p>Produce volume in the final output.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe containing OHLC(V).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.prepare_data">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">prepare_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.prepare_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a file name convert the data into a pipe separated csv.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filepath: str</strong></dt><dd><p>Location and name of flatfile extracted from gz.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.reindex_time">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">reindex_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.reindex_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reindexes dataframe with the timestamp of the trade.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame</strong></dt><dd><p>Raw data or data from one .</p>
+</dd>
+<dt><strong>symbol: str</strong></dt><dd><p>Symbol of the ticker.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe indexed with timestamp.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.tick_resampler">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">tick_resampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">volume</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.tick_resampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resamples the data based on Ticks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame</strong></dt><dd><p>Raw data or data from one .</p>
+</dd>
+<dt><strong>size: int</strong></dt><dd><p>Number of ticks to combine.</p>
+</dd>
+<dt><strong>volume: bool</strong></dt><dd><p>Produce volume in the final output.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe containing OHLC(V).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="barsampler.barsampler.volume_resampler">
+<code class="sig-prename descclassname">barsampler.barsampler.</code><code class="sig-name descname">volume_resampler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">1000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#barsampler.barsampler.volume_resampler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resamples the data based on Volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data: pandas.core.frame.DataFrame</strong></dt><dd><p>Raw data or data from one .</p>
+</dd>
+<dt><strong>size: int</strong></dt><dd><p>Run total of the volume.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.frame.DataFrame</dt><dd><p>Dataframe containing OHLCV.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Bar Sampler</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Ronak Dilip Shah.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
